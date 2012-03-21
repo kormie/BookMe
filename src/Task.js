@@ -1,6 +1,6 @@
-function task (what) {
+function task (what, completed) {
 	this.what = what
-	this.completed = false
+	this.completed = typeof completed !== 'undefined' ? completed : false
 }
 
 task.prototype.complete = function() {

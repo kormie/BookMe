@@ -18,4 +18,16 @@ describe("Task List", function() {
 			expect(testTaskList.contains(list2)).toBeTruthy();
 			expect(testTaskList.contains(list15)).toBeFalsy();
 		});
+		
+		describe("with active and completed tasks", function() {
+		  it("can return only completed tasks", function() {
+		    var list1 = new task("One");
+				var list2 = new task("Two", true);
+				var testTaskList = new taskList();
+				testTaskList.addTask(list1);
+				testTaskList.addTask(list2);
+				var completedList = testTaskList.completedTasks();
+				expect(completedList).toNotContain(list2);
+		  });
+		});
 });
