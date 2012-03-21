@@ -1,24 +1,28 @@
 describe("Task", function() {
-	
-  it("can be created with a 'what' attribute", function() {
-  var testTask = new task("Something to do");
-    expect("Something to do").toEqual(testTask.what);
-  });
+	var testTask
+	beforeEach(function() {
+	  testTask = new task("Hunt down the author of JAVA");
+	});
 	
 	describe("when created", function() {
-		var testTask
-		beforeEach(function() {
-		  testTask = new task("Hunt down the author of JAVA");
-		});
+		
+	  it("has a 'what' attribute", function() {
+	    expect("Hunt down the author of JAVA").toEqual(testTask.what);
+	  });
 		
 		it("defaults to active", function() {
 	  	expect(testTask.completed).toEqual(false);
 		});
 		
-		it("can be marked as completed", function() {
-	  	testTask.complete();
-			expect(testTask.completed).toEqual(true);
+		describe("and active", function() {
+		  
+			it("can be marked as completed", function() {
+		  	testTask.complete();
+				expect(testTask.completed).toEqual(true);
+			});
+			
 		});
 	
 	});
+
 });
