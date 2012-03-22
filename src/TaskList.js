@@ -19,7 +19,7 @@ taskList.prototype.addTask = function(task){
 taskList.prototype.completedTasks = function(){
 	completed = []
 	for (var i=0; i < this.list.length; i++) {
-		if (this.list[i].completed !== true) {
+		if (this.list[i].completed === true) {
 			completed.push(this.list[i])
 		}
 	}

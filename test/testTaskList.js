@@ -28,7 +28,8 @@ describe("Task List", function() {
 				var list3 = new task("Three", true);
 				testTaskList.addTask(list3);
 				var completedList = testTaskList.completedTasks();
-				expect(completedList).toNotContain(list3);
+				expect(completedList).toContain(list3);
+				expect(completedList).toNotContain(list1);
 		  });
 		});
 });
