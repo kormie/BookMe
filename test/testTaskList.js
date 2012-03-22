@@ -1,18 +1,22 @@
 describe("Task List", function() {
-  it("can add a task", function() {
-		var list1 = new task("One");
-		var list2 = new task("Two");
-		var testTaskList = new taskList();
+	
+	var list1
+	var list2
+	var testTaskList
+	
+	beforeEach(function() {
+		list1 = new task("One");
+		list2 = new task("Two");
+		testTaskList = new taskList();
 		testTaskList.addTask(list1);
+	});
+	
+  it("can add a task", function() {
 		expect(testTaskList.contains(list1)).toBeTruthy();
 		});
 		
 	it("holds more than one task", function() {
-			var list1 = new task("One");
-			var list2 = new task("Two");
-			var list15 = new task("Two");
-			var testTaskList = new taskList();
-			testTaskList.addTask(list1);
+			var list15 = new task("Fifteen");
 			testTaskList.addTask(list2);
 			expect(testTaskList.contains(list1)).toBeTruthy();
 			expect(testTaskList.contains(list2)).toBeTruthy();
@@ -21,13 +25,10 @@ describe("Task List", function() {
 		
 		describe("with active and completed tasks", function() {
 		  it("can return only completed tasks", function() {
-		    var list1 = new task("One");
-				var list2 = new task("Two", true);
-				var testTaskList = new taskList();
-				testTaskList.addTask(list1);
-				testTaskList.addTask(list2);
+				var list3 = new task("Three", true);
+				testTaskList.addTask(list3);
 				var completedList = testTaskList.completedTasks();
-				expect(completedList).toNotContain(list2);
+				expect(completedList).toNotContain(list3);
 		  });
 		});
 });
