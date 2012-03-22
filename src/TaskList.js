@@ -1,5 +1,5 @@
 function taskList() {
-	this.list = [];
+	this.list = []
 }
 
 taskList.prototype.contains = function(item) {
@@ -9,7 +9,7 @@ taskList.prototype.contains = function(item) {
 }
 
 taskList.prototype.addTask = function(task){
-	this.list.push(task);
+	this.list.push(task)
 }
 
 taskList.prototype.completedTasks = function(){
