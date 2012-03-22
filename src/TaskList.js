@@ -25,3 +25,13 @@ taskList.prototype.completedTasks = function(){
 	}
 	return completed
 }
+
+taskList.prototype.activeTasks = function(){
+	active = []
+	for (var i=0; i < this.list.length; i++) {
+		if (this.list[i].completed !== true) {
+			active.push(this.list[i])
+		}
+	}
+	return active
+}

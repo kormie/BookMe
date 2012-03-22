@@ -36,5 +36,11 @@ describe("Task List", function() {
 				expect(completedList).toContain(list3);
 				expect(completedList).toNotContain(list1);
 		  });
+		
+			it("can return only active tasks", function() {
+				var activeList = testTaskList.activeTasks();
+				expect(activeList).toNotContain(list3);
+				expect(activeList).toContain(list1);
+		  });
 		});
 });
