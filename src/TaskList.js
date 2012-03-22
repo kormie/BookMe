@@ -4,9 +4,11 @@ function taskList() {
 }
 
 taskList.prototype.contains = function(item) {
+	var isThere = false
 	for (var i=0; i < this.list.length; i++) {
-		if (item == this.list[i]) { return true };
-	};
+		if (item === this.list[i]) { isThere = true }
+	}
+	return isThere
 }
 
 taskList.prototype.addTask = function(task){
